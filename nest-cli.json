@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/mainway/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/mainway/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/mainway",
+  "projects": {
+    "mainway": {
+      "type": "application",
+      "root": "apps/mainway",
+      "entryFile": "main",
+      "sourceRoot": "apps/mainway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mainway/tsconfig.app.json"
+      }
+    },
+    "productmicro": {
+      "type": "application",
+      "root": "apps/productmicro",
+      "entryFile": "main",
+      "sourceRoot": "apps/productmicro/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/productmicro/tsconfig.app.json"
+      }
+    },
+    "usermicro": {
+      "type": "application",
+      "root": "apps/usermicro",
+      "entryFile": "main",
+      "sourceRoot": "apps/usermicro/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/usermicro/tsconfig.app.json"
+      }
+    }
+  }
+}
