@@ -6,6 +6,4 @@ export class UpdateProductDto extends PartialType(CreateProductDto) {
   id: number;
   @ApiProperty()
   name?: string;
-  @ApiProperty()
-  price?: number;
 }

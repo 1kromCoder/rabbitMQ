@@ -1,10 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { UserLogin } from './dto/user.login.dto';
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from 'apps/prisma/prisma.service';
 @Injectable()
 export class UserService {
   constructor(
@@ -36,7 +35,7 @@ export class UserService {
   async createLogin(data: UserLogin) {
     try {
       let user = await this.prisma.user.findFirst({
-        where: { name: data.name },
+        where: { name: data.email },
       });
       if (!user) {
         return { message: 'user not found' };
